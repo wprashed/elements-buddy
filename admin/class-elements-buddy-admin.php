@@ -73,7 +73,7 @@ class Elements_Buddy_Admin {
 		 * class.
 		 */
 
-		wp_enqueue_style( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'css/elements-buddy-admin.css', array(), $this->version, 'all' );
+		wp_enqueue_style( 'elements-buddy-admin', plugin_dir_url( __FILE__ ) . 'css/elements-buddy-admin.css', array(), $this->version, 'all' );
 
 	}
 
@@ -96,7 +96,7 @@ class Elements_Buddy_Admin {
 		 * class.
 		 */
 
-		wp_enqueue_script( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'js/elements-buddy-admin.js', array( 'jquery' ), $this->version, false );
+		wp_enqueue_script( 'elements-buddy-admin', plugin_dir_url( __FILE__ ) . 'js/elements-buddy-admin.js', array( 'jquery' ), $this->version, false );
 
 	}
 
