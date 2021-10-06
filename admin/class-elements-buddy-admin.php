@@ -18,7 +18,7 @@
  *
  * @package    Elements_Buddy
  * @subpackage Elements_Buddy/admin
- * @author     iTech Theme <rashedcse18@gmail.com>
+ * @author     iTech Theme
  */
 class Elements_Buddy_Admin {
 
