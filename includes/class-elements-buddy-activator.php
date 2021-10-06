@@ -18,7 +18,7 @@
  * @since      1.0.0
  * @package    Elements_Buddy
  * @subpackage Elements_Buddy/includes
- * @author     iTech Theme <rashedcse18@gmail.com>
+ * @author     iTech Theme
  */
 class Elements_Buddy_Activator {
 
