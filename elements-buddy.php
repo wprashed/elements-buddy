@@ -1,12 +1,6 @@
 <?php
 
 /**
- * The plugin bootstrap file
- *
- * This file is read by WordPress to generate the plugin information in the plugin
- * admin area. This file also includes all of the dependencies used by the plugin,
- * registers the activation and deactivation functions, and defines a function
- * that starts the plugin.
  *
  * @link              https://itech-softsolutions.com/
  * @since             1.0.0
@@ -15,7 +9,7 @@
  * @wordpress-plugin
  * Plugin Name:       Elements Buddy
  * Plugin URI:        https://itech-softsolutions.com/plugin
- * Description:       This is a short description of what the plugin does. It's displayed in the WordPress admin area.
+ * Description:       Elements Buddy is a set of slick and effective widgets that works seamlessly with Elementor page builder.
  * Version:           1.0.0
  * Author:            iTech Theme
  * Author URI:        https://itech-softsolutions.com/
@@ -32,8 +26,7 @@ if ( ! defined( 'WPINC' ) ) {
 
 /**
  * Currently plugin version.
- * Start at version 1.0.0 and use SemVer - https://semver.org
- * Rename this for your plugin and update it as you release new versions.
+ * Start at version 1.0.0
  */
 define( 'ELEMENTS_BUDDY_VERSION', '1.0.0' );
 
