@@ -73,6 +73,8 @@ class Elements_Buddy_Public {
 		 * class.
 		 */
 
+		wp_enqueue_style( 'bootstrap', plugin_dir_url( __FILE__ ) . 'css/bootstrap.min.css', array(), '5.1.3', 'all' );
+		wp_enqueue_style( 'animated-headline-master', plugin_dir_url( __FILE__ ) . 'css/animated-headline-master.css', array(), $this->version, 'all' );
 		wp_enqueue_style( 'elements-buddy-public', plugin_dir_url( __FILE__ ) . 'css/elements-buddy-public.css', array(), $this->version, 'all' );
 
 	}
@@ -96,6 +98,8 @@ class Elements_Buddy_Public {
 		 * class.
 		 */
 
+		wp_enqueue_script( 'bootstrap', plugin_dir_url( __FILE__ ) . 'js/bootstrap.min.js', array( 'jquery' ), '5.1.3', false );
+		wp_enqueue_script( 'animated-headline-master', plugin_dir_url( __FILE__ ) . 'js/animated-headline-master.js', array( 'jquery' ), $this->version, false );
 		wp_enqueue_script( 'elements-buddy-public', plugin_dir_url( __FILE__ ) . 'js/elements-buddy-public.js', array( 'jquery' ), $this->version, false );
 
 	}

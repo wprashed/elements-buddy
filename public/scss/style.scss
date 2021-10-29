@@ -1,0 +1,331 @@
+/*
+------------- Table of content ----------------
+
+Template Name: Elements Buddy Responsive HTML5 Template
+Template URI: http://elements-buddy.com
+Description: Elements Buddy Responsive HTML5 Template
+Author: Gobinda Sarkar
+Author URI: http://elements-buddy.com
+Version: 1.0
+
+---------------------- common content ----------
+1.body reset content
+#.header area
+
+*/
+
+/*-------------------------
+#.single-grid-post-v3
+--------------------------*/
+
+// variable
+@import "variable/_variable.scss";
+
+// mixin
+@import "mixin/_mixin.scss";
+
+// body reset content
+@import "reset/_predefine.scss";
+
+// component content
+.section-title {
+    position: relative;
+    margin-bottom: 30px;
+    font-size: 40px;
+    font-size: 600;
+    text-transform: capitalize;
+    color: #424242;
+    text-align: center;
+}
+.section-inner-title {
+    margin: 25px;
+    font-size: 24px;
+    font-weight: 600;
+    text-transform: capitalize;
+    color: #424242;
+}
+// hero-banner-area
+.hero-banner-area {
+    background-color: #fafafa;
+    padding: 150px 0;
+    .banner-text {
+        .banner-subtitle {
+            position: relative;
+            margin-bottom: 15px;
+            padding-left: 30px;
+            font-size: 14px;
+            font-weight: 500;
+            text-transform: uppercase;
+            color: #242424;
+        }
+        .banner-subtitle::before {
+            position: absolute;
+            content: '';
+            left: 0;
+            top: 7px;
+            width: 20px;
+            height: 2px;
+            background-color: #f96520;
+        }
+        .banner-title {
+            margin-bottom: 20px;
+            font-size: 62px;
+            line-height: 72px;
+            font-weight: 700;
+            text-transform: capitalize;
+            color: #233D62;
+            span {
+                color: #f96520;
+            }
+        }
+        .banner-content {
+            margin-bottom: 30px;
+            font-size: 18px;
+            line-height: 30px;
+            font-weight: 400;
+            color: #485666;
+        }
+        .banner-btn {
+            display: inline-block;
+            padding: 12px 25px;
+            border: 1px solid #f96520;
+            font-size: 16px;
+            font-weight: 500;
+            text-transform: capitalize;
+            border-radius: 6px;
+            color: #f96520;
+            transition: $transition;
+            background-color: transparent;
+            &:hover {
+                color: #ffffff;
+                background-color: #f96520;
+            }
+        }
+    }
+    .banner-image {
+        img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 30% 70% 70% 30% / 30% 30% 70% 70% ;
+        }
+    }
+}
+@media (max-width: 1399px) {
+    .hero-banner-area .banner-text .banner-title {
+        font-size: 52px;
+        line-height: 62px;
+    }
+}
+@media (max-width: 1199px) {
+    .hero-banner-area .banner-text .banner-title {
+        font-size: 42px;
+        line-height: 52px;
+        margin-bottom: 15px;
+    }
+    .hero-banner-area .banner-text .banner-subtitle {
+        margin-bottom: 10px;
+    }
+    .hero-banner-area .banner-text .banner-content {
+        margin-bottom: 20px;
+    }
+}
+@media (max-width: 991px) {
+    .hero-banner-area {
+        padding: 100px 0;
+    }
+}
+@media (max-width: 767px) {
+    .hero-banner-area .banner-image {
+        margin-bottom: 30px;
+        text-align: center;
+    }
+    .hero-banner-area .banner-text {
+        text-align: center;
+    }
+    .hero-banner-area .banner-text .banner-subtitle {
+        display: inline-block;
+    }
+}
+// hero-banner-area-two
+.hero-banner-area-two {
+    position: relative;
+    padding: 250px 0;
+    background-image: url('../images/hero-banner-bg-two.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    z-index: 1;
+    &:after {
+        position: absolute;
+        content: "";
+        width: 100%;
+        height: 100%;
+        background: rgba(0,0,0, .6);
+        left: 0;
+        top: 0;
+        z-index: -1;
+    }
+    .banner-text {
+        color: #ffffff;
+        .banner-subtitle {
+            margin-bottom: 10px;
+            font-size: 24px;
+            font-weight: 500;
+            text-transform: capitalize;
+            color: #ffffff;
+        }
+        .banner-title {
+            margin-bottom: 15px;
+            font-size: 52px;
+            font-weight: 700;
+            text-transform: capitalize;
+            color: #ffffff;
+            span {
+                color: #f96520;
+            }
+        }
+        .banner-content {
+            margin-bottom: 30px;
+            font-size: 18px;
+            line-height: 30px;
+            color: #ffffff;
+        }
+        .banner-btn {
+            display: inline-block;
+            padding: 12px 25px;
+            border-radius: 30px;
+            font-size: 16px;
+            font-weight: 700;
+            text-transform: uppercase;
+            background-color: #ffffff;
+            color: #f96520;
+            transition: all .3s ease-in-out;
+            &:hover {
+                color: #ffffff;
+                background: #f96520;
+            }
+        }
+    }
+}
+@media(max-width: 1399px) {
+    .hero-banner-area-two .banner-text .banner-title {
+        font-size: 42px;
+    }
+}
+@media(max-width: 1199px) {
+    .hero-banner-area-two .banner-text .banner-title {
+        font-size: 36px;
+    }
+}
+@media(max-width: 991px) {
+    .hero-banner-area-two {
+        padding: 150px 0;
+    }
+    .hero-banner-area-two .banner-text .banner-subtitle {
+        font-size: 20px;
+    }
+    .hero-banner-area-two .banner-text .banner-content {
+        font-size: 16px;
+        line-height: 28px;
+    }
+}
+@media(max-width: 767px) {
+    .hero-banner-area-two {
+        padding: 100px 0;
+    }
+}
+// hero-banner-area-three
+.hero-banner-area-three {
+    position: relative;
+    padding: 250px 0;
+    background: url('../images/banner-bg-three.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    z-index: 1;
+    &:after {
+        position: absolute;
+        content: "";
+        width: 100%;
+        height: 100%;
+        background: rgba(0,0,0, .3);
+        left: 0;
+        top: 0;
+        z-index: -1;
+    }
+    .banner-text {
+        text-align: right;
+    }
+    .banner-title {
+        margin-bottom: 30px;
+        font-size: 60px;
+        line-height: 72px;
+        color: #ffffff;
+        font-weight: 700;
+        span {
+            display: inline-block;
+            color: #ffffff;
+            padding: 5px 10px;
+            line-height: 1;
+            background-color:#5d39c4;
+        }
+    }
+    .banner-content {
+        margin-bottom: 45px;
+        padding-right: 25px;
+        color: #ffffff;
+        font-size: 18px;
+        line-height: 30px;
+        font-weight: 400;
+        border-right: 2px solid #5d39c4;
+    }
+    .banner-btn {
+        display: inline-block;
+        padding: 12px 25px;
+        font-size: 16px;
+        font-weight: 700;
+        color: #ffffff;
+        text-transform: capitalize;
+        background: #5d39c4;
+        transition: all .3s ease-in-out;
+        &:hover {
+            background-color: #ffffff;
+            color: #0f1b28;
+        }
+    }
+}
+@media (max-width: 1399px) {
+    .hero-banner-area-three .banner-title {
+        font-size: 50px;
+        line-height: 62px;
+    }
+    .hero-banner-area-three .banner-content {
+        font-size: 16px;
+        line-height: 28px;
+    }
+}
+@media (max-width: 1199px) {
+    .hero-banner-area-three {
+        padding: 150px 0;
+    }
+}
+@media (max-width: 991px) {
+    .hero-banner-area-three {
+        padding: 100px 0;
+    }
+}
+@media (max-width: 767px) {
+    .hero-banner-area-three .banner-text {
+        text-align: center;
+    }
+    .hero-banner-area-three .banner-content {
+        padding-right: 0;
+        border-right: none;
+        margin-bottom: 35px;
+    }
+    .hero-banner-area-three .banner-title {
+        margin-bottom: 15px;
+        font-size: 32px;
+        line-height: 42px;
+    }
+}
