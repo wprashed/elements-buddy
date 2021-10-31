@@ -1,10 +1,9 @@
 <?php
 namespace elementsbuddy;
 
-//use elementsbuddy\Widgets\Section_Title;
-//use elementsbuddy\Widgets\Hero_One;
-//use elementsbuddy\Widgets\Hero_Two;
-//use elementsbuddy\Widgets\Hero_Three;
+use elementsbuddy\Widgets\Hero_One;
+use elementsbuddy\Widgets\Hero_Two;
+use elementsbuddy\Widgets\Hero_Three;
 
 /**
  * Class Plugin
@@ -65,10 +64,9 @@ class elementsbuddy {
      * @access private
      */
     private function include_widgets_files() {
-        //require_once __DIR__ . '/widgets/title.php';
-        //require_once __DIR__ . '/widgets/hero-one.php';
-        //require_once __DIR__ . '/widgets/hero-two.php';
-        //require_once __DIR__ . '/widgets/hero-three.php';
+        require_once __DIR__ . '/widgets/hero-one.php';
+        require_once __DIR__ . '/widgets/hero-two.php';
+        require_once __DIR__ . '/widgets/hero-three.php';
     }
 
     /**
@@ -84,10 +82,9 @@ class elementsbuddy {
         $this->include_widgets_files();
 
         // Register Widgets
-        //\Elementor\Plugin::instance()->widgets_manager->register_widget_type( new Section_Title() );
-        //\Elementor\Plugin::instance()->widgets_manager->register_widget_type( new Hero_One() );
-        //\Elementor\Plugin::instance()->widgets_manager->register_widget_type( new Hero_Two() );
-        //\Elementor\Plugin::instance()->widgets_manager->register_widget_type( new Hero_Three() );
+        \Elementor\Plugin::instance()->widgets_manager->register_widget_type( new Hero_One() );
+        \Elementor\Plugin::instance()->widgets_manager->register_widget_type( new Hero_Two() );
+        \Elementor\Plugin::instance()->widgets_manager->register_widget_type( new Hero_Three() );
 
     }
 
