@@ -395,7 +395,7 @@ class Hero_One extends Widget_Base {
                 'type' => \Elementor\Controls_Manager::COLOR,
                 'default' => '#fff',
 				'selectors' => [
-					'{{WRAPPER}} .banner-btn' => 'fill: {{VALUE}}; color: {{VALUE}};',
+					'{{WRAPPER}} .banner-btn:hover' => 'fill: {{VALUE}}; color: {{VALUE}};',
 				],
 			]
 		);
@@ -407,7 +407,7 @@ class Hero_One extends Widget_Base {
 				'type' => Controls_Manager::COLOR,
 				'default' => '#f96520',
 				'selectors' => [
-					'{{WRAPPER}} .banner-btn' => 'fill: {{VALUE}}; border: 1px solid {{VALUE}};',
+					'{{WRAPPER}} .banner-btn:hover' => 'fill: {{VALUE}}; border: 1px solid {{VALUE}};',
 				],
 			]
 		);
@@ -448,7 +448,7 @@ class Hero_One extends Widget_Base {
                     <h3 class="banner-subtitle"><?php echo esc_html($settings['sub_title']); ?></h3>
                     <h1 class="banner-title"><?php echo esc_html($settings['primary_title']); ?> <span><?php echo esc_html($settings['secondary_title']); ?></span></h1>
                     <p class="banner-content"><?php echo esc_html($settings['details']); ?></p>
-                    <a href="<?php echo esc_url($settings['button_link']['url']); ?>" class="banner-btn">Our <?php echo esc_html($settings['button_text']); ?> </a>
+                    <a href="<?php echo esc_url($settings['button_link']['url']); ?>" class="banner-btn"><?php echo esc_html($settings['button_text']); ?> </a>
                     </div>
                 </div>
                 <div class="col-md-6 col-lg-7 order-first order-md-last">

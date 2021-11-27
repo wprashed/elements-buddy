@@ -395,7 +395,7 @@ class Hero_Three extends Widget_Base {
                 'type' => \Elementor\Controls_Manager::COLOR,
                 'default' => '#fff',
 				'selectors' => [
-					'{{WRAPPER}} .hero-banner-area-two .banner-text .banner-btn' => 'fill: {{VALUE}}; color: {{VALUE}};',
+					'{{WRAPPER}} .hero-banner-area-two .banner-text .banner-btn:hover' => 'fill: {{VALUE}}; color: {{VALUE}};',
 				],
 			]
 		);
@@ -407,7 +407,7 @@ class Hero_Three extends Widget_Base {
 				'type' => Controls_Manager::COLOR,
 				'default' => '#f96520',
 				'selectors' => [
-					'{{WRAPPER}} .hero-banner-area-two .banner-text .banner-btn' => 'fill: {{VALUE}}; border: 1px solid {{VALUE}};',
+					'{{WRAPPER}} .hero-banner-area-two .banner-text .banner-btn:hover' => 'fill: {{VALUE}}; border: 1px solid {{VALUE}};',
 				],
 			]
 		);

@@ -10,7 +10,7 @@
  * Plugin Name:       Elements Buddy
  * Plugin URI:        https://itech-softsolutions.com/plugin
  * Description:       Elements Buddy is a set of slick and effective widgets that works seamlessly with Elementor page builder.
- * Version:           1.0.0
+ * Version:           1.2.0
  * Author:            iTech Theme
  * Author URI:        https://itech-softsolutions.com/
  * License:           GPL-2.0+
@@ -26,9 +26,9 @@ if ( ! defined( 'WPINC' ) ) {
 
 /**
  * Currently plugin version.
- * Start at version 1.0.0
+ * Start at version 1.2.0
  */
-define( 'ELEMENTS_BUDDY_VERSION', '1.0.0' );
+define( 'ELEMENTS_BUDDY_VERSION', '1.2.0' );
 
 /**
  * The code that runs during plugin activation.
@@ -159,35 +159,8 @@ final class elementsbuddy {
             return;
         }
 
-        add_action( 'elementor/frontend/after_enqueue_styles', [ $this, 'widget_styles'] );
-        add_action( "elementor/frontend/after_enqueue_scripts", [ $this, 'widget_fronted_scripts' ] );
-
         // Once we get here, We have passed all validation checks so we can safely include our plugin
         require_once( 'plugin.php' );
-    }
-
-    function widget_fronted_scripts(){
-        wp_enqueue_script("bootstrap-js",plugins_url("/assets/js/bootstrap.min.js",__FILE__),array('jquery'),'5.0.0',true);
-        wp_enqueue_script("plugin-collection-js",plugins_url("/assets/js/jquery-plugin-collection.js",__FILE__),array('jquery'),'1.0',true);
-        wp_enqueue_script("script-js",plugins_url("/assets/js/script.js",__FILE__),array('jquery'),'1.0',true);
-    }
-
-    function widget_styles(){
-        wp_enqueue_style("animate-css-css", plugins_url("/assets/css/animate.css", __FILE__));
-        wp_enqueue_style("bootstrap-css", plugins_url("/assets/css/bootstrap.min.css", __FILE__));
-        wp_enqueue_style("bootstrap-touchspin-css", plugins_url("/assets/css/bootstrap-touchspin.css", __FILE__));
-        wp_enqueue_style("flaticon-css", plugins_url("/assets/css/flaticon.css", __FILE__));
-        wp_enqueue_style("fancybox-css", plugins_url("/assets/css/jquery.fancybox.css", __FILE__));
-        wp_enqueue_style("magnific-css", plugins_url("/assets/css/magnific-popup.css", __FILE__));
-        wp_enqueue_style("odometer-css", plugins_url("/assets/css/odometer-theme-default.css", __FILE__));
-        wp_enqueue_style("carousel-css", plugins_url("/assets/css/owl.carousel.css", __FILE__));
-        wp_enqueue_style("owl-theme-css", plugins_url("/assets/css/owl.theme.css", __FILE__));
-        wp_enqueue_style("transitions-css", plugins_url("/assets/css/owl.transitions.css", __FILE__));
-        wp_enqueue_style("slick-css", plugins_url("/assets/css/slick.css", __FILE__));
-        wp_enqueue_style("slick-theme-css", plugins_url("/assets/css/slick-theme.css", __FILE__));
-        wp_enqueue_style("style-css", plugins_url("/assets/css/style.css", __FILE__));
-        wp_enqueue_style("swiper-css", plugins_url("/assets/css/swiper.min.css", __FILE__));
-        wp_enqueue_style("themify-css", plugins_url("/assets/css/themify-icons.css", __FILE__));
     }
 
     /**

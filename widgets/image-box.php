@@ -14,7 +14,7 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
  *
  * @since 1.0.0
  */
-class Hero_Two extends Widget_Base {
+class Image_box extends Widget_Base {
 
     /**
      * Retrieve the widget name.
@@ -26,7 +26,7 @@ class Hero_Two extends Widget_Base {
      * @return string Widget name.
      */
     public function get_name() {
-        return 'hero-two';
+        return 'image-box';
     }
 
     /**
@@ -39,7 +39,7 @@ class Hero_Two extends Widget_Base {
      * @return string Widget title.
      */
     public function get_title() {
-        return __( 'Hero Two', 'elements-buddy' );
+        return __( 'Image Box', 'elements-buddy' );
     }
 
     /**
@@ -88,6 +88,15 @@ class Hero_Two extends Widget_Base {
         return [ 'elements-buddy' ];
     }
 
+    /**
+     * Register the widget controls.
+     *
+     * Adds different input fields to allow the user to change and customize the widget settings.
+     *
+     * @since 1.0.0
+     *
+     * @access protected
+     */
     protected function _register_controls() {
 
         // Content Section
@@ -99,29 +108,11 @@ class Hero_Two extends Widget_Base {
         );
 
         $this->add_control(
-            'sub_title',
-            [
-                'label' => __( 'Sub Title', 'elements-buddy' ),
-                'type' => Controls_Manager::TEXT,
-                'default' => __( 'IT DESIGN & CONSULTING', 'elements-buddy' ),
-            ]
-        );
-
-        $this->add_control(
             'primary_title',
             [
-                'label' => __( 'Primary Title', 'elements-buddy' ),
+                'label' => __( 'Title', 'elements-buddy' ),
                 'type' => Controls_Manager::TEXT,
-                'default' => __( 'Digital Age Adventure In', 'elements-buddy' ),
-            ]
-        );
-
-        $this->add_control(
-            'secondary_title',
-            [
-                'label' => __( 'Secondary Title', 'elements-buddy' ),
-                'type' => Controls_Manager::TEXT,
-                'default' => __( 'Marketing', 'elements-buddy' ),
+                'default' => __( 'Digital Age Adventure', 'elements-buddy' ),
             ]
         );
 
@@ -137,7 +128,7 @@ class Hero_Two extends Widget_Base {
         $this->add_control(
 			'image',
 			[
-				'label' => __( 'Background Image', 'elements-buddy' ),
+				'label' => __( 'Choose Image', 'elements-buddy' ),
 				'type' => \Elementor\Controls_Manager::MEDIA,
 				'default' => [
 					'url' => \Elementor\Utils::get_placeholder_image_src(),
@@ -150,7 +141,7 @@ class Hero_Two extends Widget_Base {
             [
                 'label' => __( 'Button Text', 'elements-buddy' ),
                 'type' => Controls_Manager::TEXT,
-                'default' => __( 'More About Us', 'elements-buddy' ),
+                'default' => __( 'About Us', 'elements-buddy' ),
             ]
         );
 
@@ -165,9 +156,9 @@ class Hero_Two extends Widget_Base {
 
         $this->end_controls_section();
 
-         // Style Section
+        // Style Section
 
-         $this->start_controls_section(
+        $this->start_controls_section(
             'section_style',
             [
                 'label' => __( 'Style', 'elements-buddy' ),
@@ -181,7 +172,7 @@ class Hero_Two extends Widget_Base {
 				'name' => 'background',
 				'label' => __( 'Background', 'elements-buddy' ),
 				'types' => [ 'classic', 'gradient', 'video' ],
-				'selector' => '{{WRAPPER}} .hero-style-1',
+				'selector' => '{{WRAPPER}} .image-Box-area .single-image-box .image-box-body',
 			]
 		);
 
@@ -192,49 +183,23 @@ class Hero_Two extends Widget_Base {
         $this->start_controls_section(
             'title_style',
             [
-                'label' => __( 'Title & Subtile Style', 'elements-buddy' ),
+                'label' => __( 'Title Style', 'elements-buddy' ),
                 'tab' => Controls_Manager::TAB_STYLE,
-            ]
-        );
-
-        $this->add_responsive_control(
-            'sub_title_color',
-            [
-                'label' => __( 'Sub Title Color', 'elements-buddy' ),
-                'type' => \Elementor\Controls_Manager::COLOR,
-                'scheme' => [
-                    'type' => \Elementor\Scheme_Color::get_type(),
-                    'value' => \Elementor\Scheme_Color::COLOR_1,
-                ],
-                'default'   => '#fff',
-                'selectors' => [
-                    '{{WRAPPER}} .hero-banner-area-two .banner-text .banner-subtitle' => 'color: {{VALUE}}',
-                ],
-            ]
-        );
-
-        $this->add_group_control(
-            \Elementor\Group_Control_Typography::get_type(),
-            [
-                'name' => 'sub_title_typography',
-                'label' => __( 'Sub Title Typography', 'elements-buddy' ),
-                'scheme' => Scheme_Typography::TYPOGRAPHY_1,
-                'selector' => '{{WRAPPER}} .hero-banner-area-two .banner-text .banner-subtitle',
             ]
         );
 
         $this->add_responsive_control(
             'title_color',
             [
-                'label' => __( 'Primary Title Color', 'elements-buddy' ),
+                'label' => __( 'Title Color', 'elements-buddy' ),
                 'type' => \Elementor\Controls_Manager::COLOR,
                 'scheme' => [
                     'type' => \Elementor\Scheme_Color::get_type(),
                     'value' => \Elementor\Scheme_Color::COLOR_1,
                 ],
-                'default'   => '#fff',
+                'default'   => '#233D62',
                 'selectors' => [
-                    '{{WRAPPER}} .hero-banner-area-two .banner-text .banner-title' => 'color: {{VALUE}}',
+                    '{{WRAPPER}} .image-Box-area .single-image-box .image-box-body .image-box-title' => 'color: {{VALUE}}',
                 ],
             ]
         );
@@ -243,35 +208,9 @@ class Hero_Two extends Widget_Base {
             \Elementor\Group_Control_Typography::get_type(),
             [
                 'name' => 'title_typography',
-                'label' => __( 'Primary Title Typography', 'elements-buddy' ),
+                'label' => __( 'Title Typography', 'elements-buddy' ),
                 'scheme' => Scheme_Typography::TYPOGRAPHY_1,
-                'selector' => '{{WRAPPER}} .hero-banner-area-two .banner-text .banner-title',
-            ]
-        );
-
-        $this->add_responsive_control(
-            'secondary_title_color',
-            [
-                'label' => __( 'Secondary Title Color', 'elements-buddy' ),
-                'type' => \Elementor\Controls_Manager::COLOR,
-                'scheme' => [
-                    'type' => \Elementor\Scheme_Color::get_type(),
-                    'value' => \Elementor\Scheme_Color::COLOR_1,
-                ],
-                'default'   => '#f96520',
-                'selectors' => [
-                    '{{WRAPPER}} .hero-banner-area-two .banner-text .banner-title span' => 'color: {{VALUE}}',
-                ],
-            ]
-        );
-
-        $this->add_group_control(
-            \Elementor\Group_Control_Typography::get_type(),
-            [
-                'name' => 'secondary_title_typography',
-                'label' => __( 'Secondary Title Typography', 'elements-buddy' ),
-                'scheme' => Scheme_Typography::TYPOGRAPHY_1,
-                'selector' => '{{WRAPPER}} .hero-banner-area-two .banner-text .banner-title span',
+                'selector' => '{{WRAPPER}} .image-Box-area .single-image-box .image-box-body .image-box-title',
             ]
         );
 
@@ -296,9 +235,9 @@ class Hero_Two extends Widget_Base {
                     'type' => \Elementor\Scheme_Color::get_type(),
                     'value' => \Elementor\Scheme_Color::COLOR_1,
                 ],
-                'default'   => '#fff',
+                'default'   => '#616161',
                 'selectors' => [
-                    '{{WRAPPER}} .hero-banner-area-two .banner-text .banner-content' => 'color: {{VALUE}}',
+                    '{{WRAPPER}} .image-Box-area .single-image-box .image-box-body .image-box-text p' => 'color: {{VALUE}}',
                 ],
             ]
         );
@@ -309,7 +248,7 @@ class Hero_Two extends Widget_Base {
                 'name' => 'details_typography',
                 'label' => __( 'Details Typography', 'elements-buddy' ),
                 'scheme' => Scheme_Typography::TYPOGRAPHY_1,
-                'selector' => '{{WRAPPER}} .hero-banner-area-two .banner-text .banner-content',
+                'selector' => '{{WRAPPER}} .image-Box-area .single-image-box .image-box-body .image-box-text p',
             ]
         );
 
@@ -341,19 +280,7 @@ class Hero_Two extends Widget_Base {
 				'type' => Controls_Manager::COLOR,
 				'default' => '#f96520',
 				'selectors' => [
-					'{{WRAPPER}} .hero-banner-area-two .banner-text .banner-btn' => 'fill: {{VALUE}}; color: {{VALUE}};',
-				],
-			]
-		);
-
-        $this->add_responsive_control(
-			'button_border_color',
-			[
-				'label' => __( 'Border Color', 'elements-buddy' ),
-				'type' => Controls_Manager::COLOR,
-				'default' => '#f96520',
-				'selectors' => [
-					'{{WRAPPER}} .hero-banner-area-two .banner-text .banner-btn' => 'fill: {{VALUE}}; border: 1px solid {{VALUE}};',
+					'{{WRAPPER}} .image-Box-area .single-image-box .image-box-body .image-box-btn' => 'fill: {{VALUE}}; color: {{VALUE}};',
 				],
 			]
 		);
@@ -365,7 +292,7 @@ class Hero_Two extends Widget_Base {
 				'type' => Controls_Manager::COLOR,
 				'default' => '#fff',
 				'selectors' => [
-					'{{WRAPPER}} .hero-banner-area-two .banner-text .banner-btn' => 'background-color: {{VALUE}};',
+					'{{WRAPPER}} .image-Box-area .single-image-box .image-box-body .image-box-btn' => 'background-color: {{VALUE}};',
 				],
 			]
 		);
@@ -386,19 +313,7 @@ class Hero_Two extends Widget_Base {
                 'type' => \Elementor\Controls_Manager::COLOR,
                 'default' => '#fff',
 				'selectors' => [
-					'{{WRAPPER}} .hero-banner-area-two .banner-text .banner-btn:hover' => 'fill: {{VALUE}}; color: {{VALUE}};',
-				],
-			]
-		);
-
-        $this->add_responsive_control(
-			'button_border_hover_color',
-			[
-				'label' => __( 'Border Color', 'elements-buddy' ),
-				'type' => Controls_Manager::COLOR,
-				'default' => '#f96520',
-				'selectors' => [
-					'{{WRAPPER}} .hero-banner-area-two .banner-text .banner-btn:hover' => 'fill: {{VALUE}}; border: 1px solid {{VALUE}};',
+					'{{WRAPPER}} .image-Box-area .single-image-box .image-box-body .image-box-btn:hover' => 'fill: {{VALUE}}; color: {{VALUE}};',
 				],
 			]
 		);
@@ -410,7 +325,7 @@ class Hero_Two extends Widget_Base {
                 'type' => \Elementor\Controls_Manager::COLOR,
                 'default' => '#f96520',
 				'selectors' => [
-					'{{WRAPPER}} .hero-banner-area-two .banner-text .banner-btn:hover, {{WRAPPER}} .hero-banner-area-two .banner-text .banner-btn:focus' => 'background-color: {{VALUE}};',
+					'{{WRAPPER}} .image-Box-area .single-image-box .image-box-body .image-box-btn:hover, {{WRAPPER}} .banner-btn:focus' => 'background-color: {{VALUE}};',
 				],
 			]
 		);
@@ -431,19 +346,16 @@ class Hero_Two extends Widget_Base {
     protected function render() {
         $settings = $this->get_settings_for_display();
     ?>
-
-    <div class="hero-banner-area-two" style="background-image: url(<?php echo esc_url($settings['image']['url']); ?>);">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-6 offset-lg-3 col-md-8 offset-md-2">
-                    <div class="banner-text text-center">
-                    <h3 class="banner-subtitle"><?php echo esc_html($settings['sub_title']); ?></h3>
-                    <h1 class="banner-title cd-headline zoom"><?php echo esc_html($settings['primary_title']); ?> <span class="cd-words-wrapper"><?php echo esc_html($settings['secondary_title']); ?></span></h1>
-                    <p class="banner-content"><?php echo esc_html($settings['details']); ?></p>
-                    <a href="<?php echo esc_url($settings['button_link']['url']); ?>#" class="banner-btn"><?php echo esc_html($settings['button_text']); ?> </a>
-                    </div>
-                </div>
+    <div class="single-image-box">
+        <div class="image-box-thumbnail">
+            <img src="<?php echo esc_url($settings['image']['url']); ?>" alt="<?php echo esc_html($settings['primary_title']); ?>">
+        </div>
+        <div class="image-box-body">
+            <h2 class="image-box-title"><?php echo esc_html($settings['primary_title']); ?></h2>
+            <div class="image-box-text">
+                <p><?php echo esc_html($settings['details']); ?></p>
             </div>
+            <a class="image-box-btn" href="<?php echo esc_url($settings['button_link']['url']); ?>"><span class="box-btn-text"><?php echo esc_html($settings['button_text']); ?></span></a>		
         </div>
     </div>
 
